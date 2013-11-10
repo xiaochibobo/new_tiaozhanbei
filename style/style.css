@@ -1,0 +1,185 @@
+* {
+    padding: 0;
+    margin:0;
+}
+
+body {    
+    margin: 0 auto;
+
+    width: 960px;
+    font-family: "黑体";
+    background-image :url(../images/background.png);
+}
+ul {
+    list-style: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+/*header的样式*/
+#header {
+    position: relative;
+    background-position: 4px 50px;
+
+    height: 358px;
+    background-repeat: no-repeat;
+    background-image: url(../images/banner.png);
+}
+
+.undertake {
+    padding: 5px 10px 10px 14px;
+    position: absolute;
+    left: 520px;
+    top: 30px;
+
+    width: 425px;
+    border-left: solid 1px black;
+}
+
+.undertake div {
+    padding-top :5px;
+
+    color: #003756;
+    font-size: 14px;
+}
+
+/*导航栏的style*/
+#nav {
+    margin-top: 10px;
+    padding-left: 30px;
+
+    background-image: url(../images/nav.png);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 2px 2px 3px #aaaaaa;
+}
+
+#nav li {
+    padding: 10px 0;
+
+    float: left;
+    font-size: 19px;
+} 
+
+#nav a {
+    padding: 0 25px;
+
+    border-right: 2px solid white;
+    color: white;
+}
+
+.special {
+    border: none!important;
+}
+
+#content {
+    overflow: hidden;
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 13px;
+    margin-top: 10px;
+}
+
+/*相册的style*/
+
+#display {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+.news {
+    float: left;
+    position: relative;
+
+    overflow: hidden;
+    width: 315px;
+    height: 250px;
+
+}
+
+.news li {
+    float: left;
+    position: absolute;
+}
+
+.news img{
+    width: 315px;
+}
+
+.count {
+    position: absolute;
+    left: 225px;
+    top: 213px;
+}
+.count li{
+    margin-right: 5px;
+    left: 200px;
+    float: left;
+ 
+    text-align: center;
+    background-image: url(../images/block.jpg);
+}
+.count a {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    font-size: 9px;
+    font-family: "微软雅黑";
+
+}
+
+.count a:link,.count a:visited {
+    color: white;
+}
+.count a:hover  {
+    border: 1px solid red;
+}
+
+/*相册右边的信息栏*/
+.message {
+    position: absolute;
+    left: 350px;
+    top: 15px;
+
+    width:600px;
+}
+
+.message .titile >a {
+    font-size: 17px;
+    border-radius: 5px;
+    border: 1px solid  #1e80b7;
+
+}
+.message a {
+    padding: 5px;
+}
+.message >.titile a:link,.message >.titile a:visited {
+    color: black;
+}
+.message >.titile a:hover {
+    background-color: #1e80b7;
+}
+
+.same {
+    margin-top: 10px;
+}
+.same li {
+    position: relative;
+    text-decoration: underline;
+    padding-bottom: 5px;
+    margin-top: 5px;
+
+}
+.date {
+    position: absolute;
+    right: 5px;
+
+    color: red;
+}
