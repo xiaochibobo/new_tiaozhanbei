@@ -1,3 +1,5 @@
+/*统一样式*/
+
 * {
     padding: 0;
     margin:0;
@@ -10,13 +12,16 @@ body {
     font-family: "黑体";
     background-image :url(../images/background.png);
 }
+
 ul {
     list-style: none;
 }
 
-a:link {
+a:link,a:visited {
     text-decoration: none;
+    color: black;
 }
+
 /*header的样式*/
 #header {
     position: relative;
@@ -57,8 +62,8 @@ a:link {
 
 #nav li {
     padding: 10px 0;
-
     float: left;
+
     font-size: 19px;
 } 
 
@@ -69,117 +74,254 @@ a:link {
     color: white;
 }
 
+/*最右边的边*/
 .special {
     border: none!important;
 }
 
+/*主体的style*/
 #content {
+    margin-top: 10px;
+    padding-bottom: 20px;
+
     overflow: hidden;
     box-shadow: 2px 2px 5px gray;
     border-radius: 13px;
-    margin-top: 10px;
+    
 }
 
 /*相册的style*/
-
 #display {
-    position: relative;
-
     overflow: hidden;
 }
 
 .box {
     position: relative;
-    left: 10px;
-    top: 10px;
+    margin: 10px;
+    float: left;
+
+    width: 315px;
+    height: 212px;
+    overflow: hidden;
 }
 
 .news {
-    float: left;
-    position: relative;
+    position: absolute;
 
-    overflow: hidden;
     width: 315px;
-    height: 250px;
-
+    height: 212px;
 }
 
-.news li {
-    float: left;
-    position: absolute;
+.news>li {
+    height: 212px;
 }
 
 .news img{
     width: 315px;
+    height: 212px;
 }
 
+/*显示哪张照片的页数*/
 .count {
     position: absolute;
-    left: 225px;
-    top: 213px;
+    right: 0;
+    bottom: 8px;
 }
 .count li{
     margin-right: 5px;
-    left: 200px;
     float: left;
- 
-    text-align: center;
-    background-image: url(../images/block.jpg);
-}
-.count a {
-    display: inline-block;
+
+    cursor:pointer;
     width: 17px;
-    height: 17px;
-    font-size: 9px;
-    font-family: "微软雅黑";
-
-}
-
-.count a:link,.count a:visited {
     color: white;
+    text-align: center;
+    background-image: url(../images/block.png);
 }
-.count a:hover  {
+
+.count li:hover  {
     border: 1px solid red;
 }
 
+.current {
+    background-color: #c1362e;
+} 
 /*相册右边的信息栏*/
 .message {
-    position: absolute;
-    left: 350px;
-    top: 15px;
-
+    float: right;
     width:600px;
+    margin:20px 10px 0 0;
 }
 
-.message .titile >a {
+.pre {
+    position: relative;  
+    padding-left: 15px;  
+}
+
+.right {
+    position: absolute;
+    top: -8px;
+    right: 5px;
+    border: none!important;
+}
+
+.message .pre >a {
     font-size: 17px;
     border-radius: 5px;
     border: 1px solid  #1e80b7;
-
 }
+
 .message a {
     padding: 5px;
 }
-.message >.titile a:link,.message >.titile a:visited {
-    color: black;
-}
-.message >.titile a:hover {
+
+.message >.pre a:hover {
     background-color: #1e80b7;
 }
 
+/*列表通用的样式*/
+
 .same {
     margin-top: 10px;
+    margin-left: 10px;
 }
+
 .same li {
-    position: relative;
-    text-decoration: underline;
     padding-bottom: 5px;
     margin-top: 5px;
 
+    position: relative;
+    text-decoration: underline;
 }
+
 .date {
     position: absolute;
     right: 5px;
 
     color: red;
+}
+
+/*小内容里面的标题*/
+.title {
+    position: relative;
+    padding: 3px;
+
+    background-color: #e4e4e4;
+}
+
+.title>span {
+    margin-left: 10px;
+
+    display: inline-block;
+    background-color: red;
+    width: 8px;
+    height: 20px;
+}
+
+.title>p {
+    margin-left: 5px;
+    vertical-align: 4px;
+
+    display: inline;
+    font-size: 16px;
+    color: #c23937;
+}
+
+.title>a {
+    vertical-align: 6px;
+    position: absolute;
+    margin-right: 5px;
+    right: 0;
+
+    color: red;
+}
+
+/*媒体展示*/
+#medium {
+    float: left;
+    margin-left:10px;
+    margin-top: 15px;
+
+    width: 450px;
+    border: 1px solid #e4e4e4;
+}
+
+/*比赛*/
+#contest {
+    float: right;
+    margin-right: 10px;
+    margin-top: 15px;
+    width: 460px;
+    border: 1px solid #e4e4e4;
+}
+
+/*项目*/
+#project {
+    float: left;
+    margin-left: 10px;
+    margin-top: 15px;
+    width: 588px;
+    height: 388px;
+    border: 1px solid #e4e4e4;
+}
+
+#project >ul {
+    padding-left: 10px;
+    padding-top: 32px;
+}
+
+#project >ul li {
+    float: left;
+    margin-right: 24px;
+    margin-bottom: 54px;
+}
+
+#project img {
+    width: 120px;
+}
+/*视频*/
+#video {
+    float: right;
+    width: 314px;
+    margin-right: 10px;
+    margin-top: 15px;
+    border: 1px solid #e4e4e4;
+}
+
+/*报刊*/
+#jornal {
+    float: right;
+    width: 314px;
+    margin-right: 10px;
+    margin-top: 15px;
+    border: 1px solid #e4e4e4;
+}
+
+#jornal img {
+    width: 250px;
+    margin: 15px 34px;
+}
+
+/*页脚*/
+#footer {
+    text-align: center;
+    margin-top:20px;
+    padding-bottom: 100px;
+}
+
+.link {
+    display: inline-block;
+    *display: inline; /*只有ie 6 7 识别*/
+    zoom:1; /*触发ie 6 7 下的haslayout*/
+    overflow: hidden; 
+}
+
+.link >li {
+    float: left;
+    margin-right: -1px; /*把最右边的border去掉，父元素使用hidden，负边距之美哈哈*/
+}
+
+.link a {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right:1px solid gray;
 }
