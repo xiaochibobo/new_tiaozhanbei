@@ -88,26 +88,68 @@ window.onload = function() {
     var uMessage = message[0].getElementsByTagName("ul")
     var aMessage = getElementsByClassName(message[0],"pre")[0].getElementsByTagName("a");
     var m = 0;
-    uMessage[1].style.cssText = "display : none";
-    aMessage[0].style.cssText = "background-color:#1f81b7;";
-    for (m = 0; m < aMessage.length - 1 ; m++) {
+    for (m = 0; m < aMessage.length - 1; m++) {
         aMessage[m].index = m;
         aMessage[m].onclick  = function () { //闭包
             return function () {
                 if ( this.index == 0 ) {
                     uMessage[1].style.cssText = "display : none;";
                     uMessage[0].style.cssText = "display : block;";
-                    aMessage[0].style.cssText = "background-color:#1f81b7;";
-                    aMessage[1].style.cssText = "background-color:none;";
+                    aMessage[0].style.cssText = "background-color:#1f81b7; color:white;";
+                    aMessage[1].style.cssText = "background-color:white;color:black;";
                 }  else {
                     uMessage[0].style.cssText = "display : none ;";
                     uMessage[1].style.cssText = "display : block;";
-                    aMessage[1].style.cssText = "background-color:#1f81b7;";
-                    aMessage[0].style.cssText = "background-color:none;";
+                    aMessage[1].style.cssText = "background-color:#1f81b7;color:white;";
+                    aMessage[0].style.cssText = "background-color:white;color:black;";
                 }
                return false;
             };
         }(m); 
     }
+
+    //项目展示的hover状态
+
+    var proLi = document.getElementById("project").getElementsByTagName("ul")[0].getElementsByTagName("li");
+    var proInt = getElementsByClassName(document.getElementById("project"),"introduce");
+    var n = 0;
+    for (n = 0; n < proLi.length; n++) {
+        proLi[n].index = n;
+        proLi[n].onmouseover  = function () { 
+            return function () {
+                var that = this.index; //这里必须用this，若用proLi[n]则会错。因为n是在闭包里面的变量
+                proInt[that].style.cssText = "display:block;";
+
+             };   
+        }(n);
+        proLi[n].onmouseout  = function () { 
+            return function () {
+                var that = this.index; //这里必须用this，若用proLi[n]则会错。因为n是在闭包里面的变量
+                proInt[that].style.cssText = "display:none;";
+
+             };   
+        }(n);
+    }
+
+    //nav的hover
+
+    var navLi = document.getElementById("nav").getElementsByTagName("li");
+    var t = 0;
+    for (t = 0; t < navLi.length; t++) {
+        navLi[t].index = t;
+        navLi[t].onmouseover = function () {
+            return function () {
+                var that = this.index; 
+                navLi[that].style.cssText = "background-image:url(images/nav_ho.png);background-position:center;";
+             };   
+        }(t);
+        navLi[t].onmouseout = function () {
+            return function () {
+                var that = this.index; 
+                navLi[that].style.cssText = "background-image:none;";
+             };   
+        }(t);
+    }
+
 
 };

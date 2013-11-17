@@ -147,8 +147,8 @@ a:link,a:visited {
 } 
 /*相册右边的信息栏*/
 .message {
-    float: right;
-    width:600px;
+    float: left;
+    width:440px;
     margin:20px 10px 0 0;
 }
 
@@ -157,62 +157,90 @@ a:link,a:visited {
     padding-left: 15px;  
 }
 
+.pre .pre_inone {
+    color: white;
+    background-color: #1e80b7;
+}
+
+
 .right {
     position: absolute;
     top: -8px;
-    right: 5px;
+    right: -13px;
+
     border: none!important;
 }
 
 .message .pre >a {
+    padding: 5px 20px;
+
     font-size: 17px;
-    border-radius: 5px;
+    border-radius: 20px;
     border: 1px solid  #1e80b7;
+}
+
+.message_in {
+    display: none;
 }
 
 .message a {
     padding: 5px;
+    font-size: 13px;
 }
 
-.message >.pre a:hover {
-    background-color: #1e80b7;
+.message .same  {
+    margin-bottom: -1px;
 }
+
+.message .same li {
+    border-bottom: 1px solid gray;
+}
+
+.relevance {
+    float: left;
+    margin: 20px 10px 0 0;
+
+    width: 154px;
+}
+
+
 
 /*列表通用的样式*/
 
 .same {
     margin-top: 10px;
     margin-left: 10px;
+
+    list-style: disc;
 }
 
 .same li {
     padding-bottom: 5px;
     margin-top: 5px;
 
+    list-style-position: inside;
     position: relative;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .date {
     position: absolute;
     right: 5px;
 
-    color: red;
+    color: #c23937;
 }
 
 /*小内容里面的标题*/
 .title {
     position: relative;
-    padding: 3px;
 
     background-color: #e4e4e4;
 }
 
 .title>span {
-    margin-left: 10px;
 
     display: inline-block;
-    background-color: red;
+    background-color: #1E7FB3;
     width: 8px;
     height: 20px;
 }
@@ -222,8 +250,8 @@ a:link,a:visited {
     vertical-align: 4px;
 
     display: inline;
-    font-size: 16px;
-    color: #c23937;
+    font-size: 14px;
+    color: #1E7FB3;
 }
 
 .title>a {
@@ -232,7 +260,7 @@ a:link,a:visited {
     margin-right: 5px;
     right: 0;
 
-    color: red;
+    color: #1E7FB3;
 }
 
 /*媒体展示*/
@@ -273,10 +301,24 @@ a:link,a:visited {
     float: left;
     margin-right: 24px;
     margin-bottom: 54px;
+    position: relative;
+    overflow: hidden;
+
 }
 
 #project img {
     width: 120px;
+}
+
+.introduce {
+    position: absolute;
+    display: none;
+    background-image:url(../images/pic.png);
+    width: 120px;
+    height: 120px;
+    top: 0px;
+    padding: 30px 5px;
+
 }
 /*视频*/
 #video {
@@ -324,4 +366,44 @@ a:link,a:visited {
     padding-left: 10px;
     padding-right: 10px;
     border-right:1px solid gray;
+}
+
+/*news页面的css*/
+.position {
+    margin-left: 40px;
+    padding: 10px 0;
+}
+
+.news_images img {
+    margin: 10px 5px 5px 5px;
+    width: 150px;
+    float: left;
+}
+
+.news_images p {
+    padding:10px 0 50px 0;
+
+}
+
+.left_news {
+    overflow: hidden;
+    width: 687px;
+    float: left;
+    padding-left: 35px;
+}
+
+.left_news>div{
+    float: left;
+    width: 330px;
+    margin-left:10px;
+}
+
+.right_news {
+    width: 225px;
+    float: right;
+    margin-right: 10px;
+}
+
+.paper {
+    margin:25px 20px;
 }
