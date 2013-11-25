@@ -1,0 +1,56 @@
+/*news页面的css*/
+
+.news_images {
+    overflow: hidden;
+}
+
+.news_images img {
+    margin: 10px 5px 5px 5px;
+    float: left;
+
+    width: 150px;
+}
+
+.news_images p {
+    padding:10px 5px 50px 0;
+    font-size: 14px;
+}
+
+.news_contest ,.news_active {
+    margin-top:10px;
+}
+
+.left_news {
+    float: left;
+    padding-left: 35px;
+
+    overflow: hidden;
+    width: 687px;
+}
+
+.left_news>div {
+    border: 1px solid #e4e4e4;
+}
+
+.left_news .same a {
+    width: 305px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.left_news>div {
+    float: left;
+    margin-left:10px;
+
+    width: 330px;
+}
+
+.right_news {
+    float: right;
+    margin-right: 10px;
+
+    width: 225px;
+}
+

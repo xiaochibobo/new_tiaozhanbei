@@ -1,0 +1,73 @@
+
+/*example的style*/
+
+.exa_left {
+    float: left;
+    margin:0 30px;
+
+    width: 720px;
+    border: 1px solid #e4e4e4;
+}
+
+.exa_left>div {
+    margin-top:10px;
+    padding: 5px 0; 
+}
+
+.exa_right {
+    float: left;
+
+    width: 156px;
+    border: 1px solid #e4e4e4;
+}
+
+.exa_h {
+    padding: 5px 15px;
+
+    color: white;
+    background-color: #1e80b7;
+    text-align:left;
+}
+
+.exa_p {
+    padding: 5px 10px;
+
+    color: white;
+    background-color: #1e80b7;
+    text-align:left;
+}
+
+.exa_right img {
+    padding: 10px;
+}
+
+.brief {
+    height: 120px;
+}
+
+.detail {
+    height: 380px;
+}
+
+.prize {
+    height: 165px;
+}
+
+.name>h4,.b_str>h4,.s_str>h4,.brief>h4,.detail>h4,.prize>h4 {
+    margin-bottom: -28px;
+    margin-left: 10px;
+    padding: 5px 0;
+}
+
+.name>p,.b_str>p,.s_str>p,.brief>p,.detail>p,.prize>p {
+    margin-left: 140px;
+    line-height: 150%;
+}
+
+.b_str,.brief,.prize {
+    background-color: #e9e9e9;
+}
+
+.prize {
+    margin-bottom: 100px;
+}

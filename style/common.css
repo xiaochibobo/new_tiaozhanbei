@@ -1,0 +1,229 @@
+/*统一样式*/
+
+* {
+    padding: 0;
+    margin:0;
+}
+
+body {    
+    margin: 0 auto;
+
+    width: 960px;
+    font-family: "黑体";
+    background-image :url(../images/background.png);
+}
+
+img {
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a:link,a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.red {
+    color: red!important;
+}
+
+/*活动图集图片的style*/
+.paper {
+    margin:25px 20px;
+}
+
+.paper>p {
+    margin-top: 5px;
+
+    font-size: 14px;
+    text-align: center;
+}
+
+.paper a>img {
+    padding-left: 10px;
+
+    width: 150px;
+}
+
+/*您现在的位置的style*/
+.position {
+    margin-left: 30px;
+    padding: 10px 0;
+}
+
+.position a, .position span {
+    margin-right: 0px;
+}
+
+/*header的样式*/
+#header {
+    position: relative;
+    background-position: 4px 50px;
+
+    height: 358px;
+    background-repeat: no-repeat;
+    background-image: url(../images/banner.png);
+}
+
+.undertake {
+    padding: 5px 10px 10px 14px;
+    position: absolute;
+    left: 520px;
+    top: 30px;
+
+    width: 425px;
+    border-left: solid 1px black;
+}
+
+.undertake div {
+    padding-top :5px;
+
+    color: #003756;
+    font-size: 14px;
+}
+
+/*导航栏的style*/
+#nav {
+    margin-top: 10px;
+    padding-left: 28px;
+
+    background-image: url(../images/nav.png);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 2px 2px 3px #aaaaaa;
+}
+
+#nav li {
+    padding: 10px 0;
+    float: left;
+
+    font-size: 19px;
+} 
+
+#nav a {
+    padding: 0 25px;
+
+    border-right: 2px solid white;
+    color: white;
+}
+
+/*nav最右边的边*/
+.special {
+    border: none!important;
+
+}
+/*主体的style*/
+#content {
+    margin-top: 10px;
+    padding-bottom: 20px;
+
+    overflow: hidden;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 13px;
+    
+}
+
+/*页脚*/
+#footer {
+    text-align: center;
+    margin-top:20px;
+    padding-bottom: 100px;
+}
+
+.link {
+    display: inline-block;
+    *display: inline; /*只有ie 6 7 识别*/
+    zoom:1; /*触发ie 6 7 下的haslayout*/
+    overflow: hidden; 
+}
+
+.link >li {
+    float: left;
+    margin-right: -1px; /*把最右边的border去掉，父元素使用hidden，负边距之美哈哈*/
+}
+
+.link a {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border-right:1px solid gray;
+}
+
+/*列表通用的样式*/
+
+.same {
+    margin-top: 4px;
+    margin-left: 4px;
+
+    list-style: disc;
+}
+
+.same li {
+    margin-top:5px;
+    padding-bottom:5px;
+    margin-left: 5px;
+
+    display: inline-block;
+    text-decoration: none;
+}
+
+.same a {
+    width: 415px;
+    display: inline-block;
+    white-space:nowrap; 
+    overflow: hidden;
+    text-overflow:ellipsis;
+    font-size: 14px;
+}
+
+.same a:hover {
+    text-decoration: underline;
+}
+
+.date {
+    position: absolute;
+    right: -100px;
+    top:2px;
+
+    border-bottom: 1px solid gray;
+    color: black;
+    padding-bottom: 5px;
+    padding-left: 21px;
+}
+
+/*小内容里面的标题*/
+.title {
+    position: relative;
+
+    background-color: #e4e4e4;
+}
+
+.title>span {
+    display: inline-block;
+    *display: inline; /*只有ie 6 7 识别*/
+    zoom:1; /*触发ie 6 7 下的haslayout*/
+    background-color: #1E7FB3;
+    width: 8px;
+    height: 20px;
+}
+
+.title>p {
+    margin-left: 5px;
+    vertical-align: 4px;
+
+    display: inline;
+    font-size: 14px;
+    color: #1E7FB3;
+}
+
+.title>a {
+    vertical-align: 6px;
+    position: absolute;
+    margin-right: 5px;
+    right: 0;
+
+    color: #1E7FB3;
+}

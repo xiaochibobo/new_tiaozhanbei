@@ -1,71 +1,73 @@
 window.onload = function() {
-    var oBox = document.getElementById("display");
-    var oList = oBox.getElementsByTagName("ul")[0];
-    var oImg = oBox.getElementsByTagName("img");
-    var timer = playTimer = null;
-    var index = i = 0;
-    var bOrder = true;
-    var aBtn = oBox.getElementsByTagName("ul")[1].getElementsByTagName("li");
 
-
-
-    //初始化状态
-    cutover();
-
-    //按钮点击切换
-    for (i = 0; i < aBtn.length; i++)
-    {
-        aBtn[i].index = i;
-        aBtn[i].onmouseover = function ()
+    function preDisplay() {
+        var oBox = document.getElementById("box");
+        var aUl = oBox.getElementsByTagName("ul");
+        var aImg = aUl[0].getElementsByTagName("li");
+        var aNum = aUl[1].getElementsByTagName("li");
+        var timer = play = null;
+        var i = index = 0; 
+        aNum[0].className = "current" 
+        
+        //切换按钮
+        for (i = 0; i < aNum.length; i++)
         {
-            index = this.index;
-            cutover()
+            aNum[i].index = i;
+            aNum[i].onmouseover = function ()
+            {
+                show(this.index)
+            }
         }
-    }
-    
-    function cutover()
-    {
-        for (i = 0; i < aBtn.length; i++) aBtn[i].className = "";
-        aBtn[index].className = "current";          
-        startMove(-(index * oImg[0].offsetHeight))
-    }
-    
-    function next()
-    {
-        bOrder ? index++ : index--;
-        index <= 0 && (index = 0, bOrder = true);
-        index >= aBtn.length - 1 && (index = aBtn.length - 1, bOrder = false)
-        cutover()
-    }
-    
-    playTimer = setInterval(next, 3000);
-    
-    //鼠标移入展示区停止自动播放
-    oBox.onmouseover = function ()
-    {
-        clearInterval(playTimer)
-    };
-    
-    //鼠标离开展示区开始自动播放
-    oBox.onmouseout = function ()
-    {
-        playTimer = setInterval(next, 3000)
-    };
-    function startMove(iTarget)
-    {
-        clearInterval(timer); //清除上次的调用
-        timer = setInterval(function ()
+        
+        //鼠标划过关闭定时器
+        oBox.onmouseover = function ()
         {
-            doMove(iTarget)
-        }, 30)  
-    }
-    function doMove (iTarget)
-    {       
-        var iSpeed = (iTarget - oList.offsetTop) / 10;
-        iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);       
-        oList.offsetTop == iTarget ? clearInterval(timer) : oList.style.top = oList.offsetTop + iSpeed + "px"
-    }
+            clearInterval(play) 
+        };
+        
+        //鼠标离开启动自动播放
+        oBox.onmouseout = function ()
+        {
+            autoPlay()
+        };  
+        
+        //自动播放函数
+        function autoPlay ()
+        {
+            play = setInterval(function () {
+                index++;
+                index >= aImg.length && (index = 0);
+                show(index);        
+            },2000);    
+        }
+        autoPlay();//应用
+        
+        //图片切换, 淡入淡出效果
+        function show (a)
+        {
+            index = a;
+            var alpha = 0;
+            for (i = 0; i < aNum.length; i++)aNum[i].className = "";
+            aNum[index].className = "current";
+            clearInterval(timer);           
+            
+            for (i = 0; i < aImg.length; i++)
+            {
+                aImg[i].style.opacity = 0;
+                aImg[i].style.filter = "alpha(opacity=0)";  
+            }
+            
+            timer = setInterval(function () {
+                alpha += 2;
+                alpha > 100 && (alpha =100);
+                aImg[index].style.opacity = alpha / 100;
+                aImg[index].style.filter = "alpha(opacity = " + alpha + ")";
+                alpha == 100 && clearInterval(timer)
+            },20);
+        }
+    }    
 
+   
     //通过class寻找元素的兼容浏览器写法
 
     function  getElementsByClassName (node, classname) {
@@ -84,72 +86,161 @@ window.onload = function() {
     }
 
     //文本切换
-    var message = getElementsByClassName(oBox,"message");
-    var uMessage = message[0].getElementsByTagName("ul")
-    var aMessage = getElementsByClassName(message[0],"pre")[0].getElementsByTagName("a");
-    var m = 0;
-    for (m = 0; m < aMessage.length - 1; m++) {
-        aMessage[m].index = m;
-        aMessage[m].onclick  = function () { //闭包
-            return function () {
-                if ( this.index == 0 ) {
-                    uMessage[1].style.cssText = "display : none;";
-                    uMessage[0].style.cssText = "display : block;";
-                    aMessage[0].style.cssText = "background-color:#1f81b7; color:white;";
-                    aMessage[1].style.cssText = "background-color:white;color:black;";
-                }  else {
-                    uMessage[0].style.cssText = "display : none ;";
-                    uMessage[1].style.cssText = "display : block;";
-                    aMessage[1].style.cssText = "background-color:#1f81b7;color:white;";
-                    aMessage[0].style.cssText = "background-color:white;color:black;";
-                }
-               return false;
-            };
-        }(m); 
-    }
-
+    function messSwitch(parentEle,m_classname,target_ul,a_classname,target_a) {
+        var message = getElementsByClassName(parentEle,m_classname);
+        var uMessage = message[0].getElementsByTagName(target_ul)
+        var aMessage = getElementsByClassName(message[0],a_classname)[0].getElementsByTagName(target_a);
+        var m = 0;
+        for (m = 0; m < aMessage.length - 1; m++) {
+            aMessage[m].index = m;
+            aMessage[m].onclick  = function () { //闭包
+                return function () {
+                    if ( this.index == 0 ) {
+                        uMessage[1].style.cssText = "display : none;";
+                        uMessage[0].style.cssText = "display : block;";
+                        aMessage[0].style.cssText = "background-color:#1f81b7; color:white;";
+                        aMessage[1].style.cssText = "background-color:white;color:black;";
+                    }  else {
+                        uMessage[0].style.cssText = "display : none ;";
+                        uMessage[1].style.cssText = "display : block;";
+                        aMessage[1].style.cssText = "background-color:#1f81b7;color:white;";
+                        aMessage[0].style.cssText = "background-color:white;color:black;";
+                    }
+                   return false;
+                };
+            }(m); 
+        }
+    }; 
     //项目展示的hover状态
+    function proHover(parentEle,target_ul,target_li,target_class) {
 
-    var proLi = document.getElementById("project").getElementsByTagName("ul")[0].getElementsByTagName("li");
-    var proInt = getElementsByClassName(document.getElementById("project"),"introduce");
-    var n = 0;
-    for (n = 0; n < proLi.length; n++) {
-        proLi[n].index = n;
-        proLi[n].onmouseover  = function () { 
-            return function () {
-                var that = this.index; //这里必须用this，若用proLi[n]则会错。因为n是在闭包里面的变量
-                proInt[that].style.cssText = "display:block;";
+        var proLi = document.getElementById(parentEle).getElementsByTagName(target_ul)[0].getElementsByTagName(target_li);
+        var proInt = getElementsByClassName(document.getElementById(parentEle),target_class);
+        var n = 0;
+        for (n = 0; n < proLi.length; n++) {
+            proLi[n].index = n;
+            proLi[n].onmouseover  = function () { 
+                return function () {
+                    var that = this.index; //这里必须用this，若用proLi[n]则会错。因为n是在闭包里面的变量
+                    proInt[that].style.cssText = "display:block;";
 
-             };   
-        }(n);
-        proLi[n].onmouseout  = function () { 
-            return function () {
-                var that = this.index; //这里必须用this，若用proLi[n]则会错。因为n是在闭包里面的变量
-                proInt[that].style.cssText = "display:none;";
+                 };   
+            }(n);
+            proLi[n].onmouseout  = function () { 
+                return function () {
+                    var that = this.index; //这里必须用this，若用proLi[n]则会错。因为n是在闭包里面的变量
+                    proInt[that].style.cssText = "display:none;";
 
-             };   
-        }(n);
-    }
+                 };   
+            }(n);
+        }
+    };      
 
     //nav的hover
 
-    var navLi = document.getElementById("nav").getElementsByTagName("li");
-    var t = 0;
-    for (t = 0; t < navLi.length; t++) {
-        navLi[t].index = t;
-        navLi[t].onmouseover = function () {
-            return function () {
-                var that = this.index; 
-                navLi[that].style.cssText = "background-image:url(images/nav_ho.png);background-position:center;";
-             };   
-        }(t);
-        navLi[t].onmouseout = function () {
-            return function () {
-                var that = this.index; 
-                navLi[that].style.cssText = "background-image:none;";
-             };   
-        }(t);
+    function navHover(parentEle,target) {
+        var navLi = document.getElementById(parentEle).getElementsByTagName(target);
+        var t = 0;
+        for (t = 0; t < navLi.length; t++) {
+           navLi[t].index = t;
+            navLi[t].onmouseover = function () {
+                return function () {
+                    var that = this.index; 
+                    navLi[that].style.cssText = "background-image:url(images/nav_ho.png);background-position:center;";
+                 };   
+            }(t);
+            navLi[t].onmouseout = function () {
+                return function () {
+                    var that = this.index; 
+                    navLi[that].style.cssText = "background-image:none;";
+                 };   
+            }(t);
+        }
+    };    
+
+    function leftNav(id,ele) {
+        var ul = document.getElementById(id,ele);
+        var aEle = ul.getElementsByTagName(ele);
+        var target = 0;
+        aEle[0].style.cssText = "background-color:#1e80b7;color:white;";
+        for (var t = 0; t < aEle.length; t++) {
+            aEle[t].index = t;
+            aEle[t].onclick = function () {
+                return function () {
+                    var that = this.index;
+                    aEle[target].style.cssText = "background-color:white;color:#1e80b7;";
+                    aEle[that].style.cssText = "background-color:#1e80b7;color:white;" ;
+                    target = that;
+                    return false;
+                };
+            }(t);          
+        }
     }
 
+    var strUrl = window.location.href;
+    var arrUrl = strUrl.split("/");
+    var strPage = arrUrl[arrUrl.length - 1];
+    if (strPage == "index.html" )
+    {
+        preDisplay();
+        navHover("nav","li");
+        proHover("project","ul","li","introduce"); 
+        messSwitch(document.getElementById("display"),"message","ul","pre","a");
 
+    }
+    else if (strPage == "example.html" || strPage == "news.html" || strPage == "project.html")
+    {
+ 
+        navHover("nav","li");
+    }
+    else if (strPage == "special.html" || strPage == "list.html")
+    {
+        navHover("nav","li");
+        leftNav("leftNav","a");
+    }
+    else if (strPage =="introduce.html")
+    {
+        navHover("nav","li");
+        leftNav("leftNav","a");
+        leftNav("circle","a");
+
+    }
 };
+
+
+;(function($){
+    // 段落溢出处理函数
+    $.fn.extend({
+        paraOverflow:function(options){
+            return this.each(function(){
+                var $this=$(this);
+                var thisHeight=function(){
+                    return $this.innerHeight();
+                };
+                var defaults=$.extend({
+                    height:$this.parent().innerHeight(),
+                    word:'......',
+                    link:$this.find('.get-more').length?$this.find('.get-more').attr('href'):'#',
+                    dNum:5
+                },$.fn.paraOverflow.setup,options);
+                if(thisHeight()>defaults.height){
+                    var $getMore=defaults.word!=='......'?
+                        $('<a href="'+defaults.link+'">'+' '+defaults.word+'</a>'):$('<span>'+defaults.word+'</span>');
+                    var text=$this.text();
+                    var maxNum=Math.floor(text.length*(defaults.height/$this.innerHeight()));
+                    do{
+                        $this.text(text.slice(0,maxNum)).append($getMore);
+                        maxNum-=defaults.dNum;
+                    }while(thisHeight()>defaults.height&&maxNum>0&&defaults.dNum!==0);
+                }
+            });
+        }
+    });
+    $.fn.paraOverflow.setup={};
+}(jQuery));
+
+$(function() {
+    $('p').paraOverflow({
+        height: '90'
+    });
+});

@@ -1,0 +1,31 @@
+/*project页面的html*/
+
+.pro_h {
+    padding: 5px 0;
+    margin:0 20px;
+
+    color: white;
+    background-color: #1e80b7;
+    text-align:center;
+}
+
+.pro {
+    margin: 20px;
+    float: left;
+
+    width: 435px;
+}
+
+.pro img {
+    float:left;
+}
+
+.pro p {
+    margin-top:10px;
+
+    width: 300px;
+}
+
+.pro p,.pro h4 {
+    margin-left: 135px;
+}

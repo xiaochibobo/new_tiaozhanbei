@@ -1,0 +1,235 @@
+
+/*相册的style*/
+#display {
+    overflow: hidden;
+}
+
+#box {
+    position: relative;
+    margin: 10px;
+    float: left;
+
+    width: 315px;
+    height: 212px;
+    overflow: hidden;
+}
+
+.news {
+
+
+    width: 315px;
+    height: 212px;
+}
+
+.news>li {
+    height: 212px;
+    position: absolute;
+}
+
+.news img{
+    width: 315px;
+    height: 212px;
+}
+
+/*显示哪张照片的页数*/
+.count {
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+}
+.count li{
+    margin-right: 5px;
+    float: left;
+
+    cursor:pointer;
+    width: 17px;
+    color: white;
+    text-align: center;
+    background-image: url(../images/block.png);
+}
+
+.count li:hover  {
+    border: 1px solid red;
+}
+
+.current {
+    background-color: #c1362e;
+} 
+/*相册右边的信息栏*/
+.message {
+    float: left;
+    width:440px;
+    margin:12px 10px 0 0;
+}
+
+.message .same li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.message .same a:hover {
+    text-decoration: none;
+}
+
+.pre {
+    position: relative;  
+    padding-left: 15px;  
+}
+
+.pre .pre_inone {
+    color: white;
+    background-color: #1e80b7;
+}
+
+
+.right {
+    position: absolute;
+    top: -8px;
+    right: -13px;
+
+    color: #1E7FB3!important;
+    border: none!important;
+}
+
+.message .pre >a {
+    padding: 5px 20px;
+
+    font-size: 17px;
+    border-radius: 20px;
+    border: 1px solid  #1e80b7;
+}
+
+.message_in {
+    display: none;
+}
+
+.message a {
+    padding: 5px;
+    font-size: 13px;
+}
+
+.message .same  {
+    margin-bottom: -1px;
+}
+
+.message .same li {
+    display: inline-block;
+    border-bottom: 1px solid gray;
+    width: 329px;
+}
+
+.message .same a {
+
+    width: 329px;
+    display: inline-block;
+    white-space:nowrap; 
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+.relevance {
+    float: left;
+    margin: 20px 10px 0 0;
+
+    width: 154px;
+}
+
+
+/*媒体展示*/
+#medium {
+    float: left;
+    margin-left:10px;
+    margin-top: 15px;
+
+    width: 450px;
+    border: 1px solid #e4e4e4;
+}
+
+/*比赛*/
+#contest {
+    float: right;
+    margin-right: 10px;
+    margin-top: 15px;
+    width: 460px;
+    border: 1px solid #e4e4e4;
+}
+
+/*项目*/
+#project {
+    float: left;
+    margin-left: 10px;
+    margin-top: 15px;
+    width: 588px;
+    height: 388px;
+    border: 1px solid #e4e4e4;
+}
+
+#project >ul {
+    padding-left: 10px;
+    padding-top: 32px;
+}
+
+#project >ul li {
+    float: left;
+    margin-right: 24px;
+    margin-bottom: 54px;
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+#project img {
+    width: 120px;
+    border: none;
+}
+
+.introduce {
+    position: absolute;
+    height: 120px;
+    top: 0px;
+    padding: 30px 5px;
+
+    font-size: 14px;
+    display: none;
+    background-color:rgba(0,0,0,0.5);
+    width: 120px;
+
+}
+/*视频*/
+#video {
+    float: right;
+    margin-right: 10px;
+    margin-top: 15px;
+
+    width: 314px;
+    border: 1px solid #e4e4e4;
+}
+
+/*报刊*/
+#jornal {
+    float: right;
+    margin-right: 10px;
+    margin-top: 15px;
+
+    width: 314px;
+    border: 1px solid #e4e4e4;
+}
+
+#jornal a {
+    float: left;
+}
+
+#jornal img {
+    margin:15px 27px;
+
+    width: 100px;
+    border: none;
+}
+
+
+
+
+
+
