@@ -1,80 +1,64 @@
-/*list的页面*/
 
-.left_list {
-    float: left;
-    padding-left: 36px;
-    width: 163px;
-}
-
-.left_list a {
-    padding: 5px 30px;
-
-    font-size: 20px;
-    border-radius: 20px;
-    border: 1px solid #1e80b7;
-    width: 145px;
-    color: #1e80b7;
-}
-
-.left_list li {
-    margin-top:20px;
-}
-
-.middle_list {
+.left_inform {
     margin-top: 15px;
     margin-right: 15px;
+    margin-left: 31px;
     float: left;
 
-    width: 485px;
+    width: 663px;
     height: 483px;
     border: 1px solid #e4e4e4;
 }
 
-.middle_list .same a {
+.left_inform .same a {
     width:275px;
 }
 
-.middle_list>div {
+.left_inform>div {
     height: 10px;
     background-color: #1e7eb5;
 }
 
-.middle_list>ul {
+.left_inform li {
+    margin-left: 20px;
+}
+
+.left_inform>ul {
     list-style: none;
 }
 
-.middle_list .date {
+.left_inform .date {
     position: relative;
-    right: -22px;
+    right: -190px;
     top: 0px;
 
     font-size: 14px;
     border-bottom: none;
 }
 
-.middle_list a,.middle_list span,.middle_list li {
+.left_inform a,.left_inform span,.left_inform li {
     color: #1e80b7;
 }
 
-.middle_footer {
+.left_footer {
     text-align: center;
     background-color: white!important;
 }
 
-.middle_footer>ul {
+.left_footer>ul {
     overflow: hidden;
     display: inline-block;
     *display: inline; /*只有ie 6 7 识别*/
     zoom:1; /*触发ie 6 7 下的haslayout*/
 }
 
-.middle_footer li {
+.left_footer li {
     float: left;
     margin-left: 15px;
     margin-top: 20px;
 }
 
-.right_list {
+.right_inform {
     margin-top: 15px;
     float: left;
 

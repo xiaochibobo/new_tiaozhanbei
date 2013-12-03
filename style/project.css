@@ -23,7 +23,8 @@
 .pro p {
     margin-top:10px;
 
-    width: 300px;
+    width: 300px;  
+    font-size: 15px;
 }
 
 .pro p,.pro h4 {
