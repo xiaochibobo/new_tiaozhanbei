@@ -11,6 +11,7 @@ body {
     width: 960px;
     font-family: "黑体";
     background-image :url(../images/background.png);
+    background-repeat: no-repeat;
 }
 
 img {
@@ -190,6 +191,7 @@ a:link,a:visited {
 
 .same a:hover {
     text-decoration: underline;
+    color: #1E7FB3;
 }
 
 .date {
@@ -235,4 +237,13 @@ a:link,a:visited {
     right: 0;
 
     color: #1E7FB3;
+}
+
+.title>a:hover {
+    font-weight: bold;
+}
+
+.bac_blue {
+    background-color:#1e81b7; 
+    color:white!important;
 }

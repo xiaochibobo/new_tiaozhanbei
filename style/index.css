@@ -70,6 +70,7 @@
 
 .message .same a:hover {
     text-decoration: none;
+    color: #1E7FB3;
 }
 
 .pre {

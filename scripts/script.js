@@ -156,21 +156,4 @@
         }
     };    
 
-    function leftNav(id,ele) {
-        var ul = document.getElementById(id,ele);
-        var aEle = ul.getElementsByTagName(ele);
-        var target = 0;
-        aEle[0].style.cssText = "background-color:#1e80b7;color:white;";
-        for (var t = 0; t < aEle.length; t++) {
-            aEle[t].index = t;
-            aEle[t].onclick = function () {
-                return function () {
-                    var that = this.index;
-                    aEle[target].style.cssText = "background-color:white;color:#1e80b7;";
-                    aEle[that].style.cssText = "background-color:#1e80b7;color:white;" ;
-                    target = that;
-                    return false;
-                };
-            }(t);          
-        }
-    }
+    
