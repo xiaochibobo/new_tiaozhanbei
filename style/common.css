@@ -96,6 +96,15 @@ a:link,a:visited {
     box-shadow: 2px 2px 3px #aaaaaa;
 }
 
+.nav_hov {
+    background-image:url(images/nav_ho.png);
+    background-position:center;
+}
+
+.nav_out {
+    background-image:none;
+}
+
 #nav li {
     padding: 10px 0;
     float: left;

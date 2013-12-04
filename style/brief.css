@@ -1,0 +1,47 @@
+.left_brief {
+    float: left;
+    padding-left: 36px;
+    width: 163px;
+}
+
+.left_brief a {
+    padding: 5px 30px;
+
+    font-size: 20px;
+    border-radius: 20px;
+    border: 1px solid #1e80b7;
+    width: 145px;
+    color: #1e80b7;
+}
+
+.left_brief li {
+    margin-top:20px;
+}
+
+.right_brief {
+    margin-top: 15px;
+    float: left;
+
+    width: 730px;
+    border: 1px solid #e4e4e4;
+    overflow: hidden;
+
+}
+
+.right_brief>h2 {
+    padding: 5px 0;
+
+    text-align: center;
+    background-color:#1e81b7;
+    color: white;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.right_brief>p {
+    margin-top:10px;
+    margin-left: 10px;
+    padding: 0 5px;
+
+    line-height: 1.4em;
+}
