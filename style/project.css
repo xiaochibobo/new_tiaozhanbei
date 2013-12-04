@@ -16,6 +16,10 @@
     width: 435px;
 }
 
+.pro>div:hover p,.pro>div:hover h4 {
+    color: #1e80b7;
+}
+
 .pro img {
     float:left;
 }

@@ -42,15 +42,15 @@
 }
 
 .brief {
-    height: 120px;
+    min-height: 120px;
 }
 
 .detail {
-    height: 380px;
+    min-height: 380px;
 }
 
 .prize {
-    height: 165px;
+    min-height: 165px;
 }
 
 .name>h4,.b_str>h4,.s_str>h4,.brief>h4,.detail>h4,.prize>h4 {

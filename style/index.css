@@ -196,7 +196,7 @@
     display: none;
     background-color:rgba(0,0,0,0.5);
     width: 120px;
-
+    color: white;
 }
 /*视频*/
 #video {
